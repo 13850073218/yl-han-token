@@ -16,7 +16,7 @@ Key：填写你自己的 API Key
 在支持技能的智能体里发送：
 
 ```text
-请从 https://github.com/13850073218/yl-han-token 安装或更新 yl-han-token 技能到当前智能体可发现的目录，检查其完整性，报告实际安装位置。不要修改我的模型配置，等我提供 Key 和模型 ID 后再接入。
+请从 https://github.com/13850073218/yl-han-token 安装或更新 yl-han-token 技能到当前智能体可发现的目录，检查完整性并读取其 SKILL.md。报告实际安装路径、运行环境及是否需要重新加载；安装完成后，主动在当前对话中展示“只需提供 API Key 和精确模型 ID”的下一步引导，给出单模型、同 Key 多模型的对话示例，说明默认使用汉路特地址、不需要 URL 或 JSON，Key 不回显。先不要修改模型配置；我提供 Key 和 ID 后，再按当前智能体的兼容方式接入。
 ```
 
 支持 `skills` 安装器的环境可运行（需要 Node.js/npx）：
@@ -24,6 +24,8 @@ Key：填写你自己的 API Key
 ```shell
 npx --yes skills add https://github.com/13850073218/yl-han-token --skill yl-han-token --global --yes
 ```
+
+仅执行安装命令时，是否继续显示对话引导取决于宿主。建议使用上面的完整安装提示词，要求安装后读取 SKILL.md 并展示下一步。
 
 安装器识别哪些客户端以其当前版本输出为准；不支持原生 Skill 的产品可由具备文件/终端工具的宿主读取 `yl-han-token/SKILL.md`，或按客户端指南配置。下载 ZIP 时请保留完整的 `yl-han-token/` 目录，不能只复制 SKILL.md。
 

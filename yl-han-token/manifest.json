@@ -50,8 +50,8 @@
     "scripts/vendor/tomlkit/toml_document.py": "3824e45977773f9f04653e120fcfdd75cd58a6431aaad952e7fb2d1d306630e2",
     "scripts/vendor/tomlkit/toml_file.py": "d14e26e415728ee41dd2dd2bfa653e92879fa976e69ec3dd00de8a7bbd56e5d0",
     "scripts/vendor/tomlkit-LICENSE": "f2f9b460ba719da6626add264d3782f275a4ff7aab677beda08b330911e23adb",
-    "SKILL.md": "53b787f43edd2e0042309606991d53d38ad6460350d218a9435facd7b52ac321",
+    "SKILL.md": "97a239bf2d5beaaa81e33c51220bbd52e68ab0378800a51c787c35b07f7239a4",
     "tests/test_connections.py": "88fef4d51b19f3d5d82dc231a92c7b6e9bdb77e8441ecb8ad7468975c2b68b8b"
   },
-  "version": "1.1.0"
+  "version": "1.1.1"
 }
