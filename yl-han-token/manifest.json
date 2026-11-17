@@ -1,17 +1,20 @@
 {
   "format": 1,
   "name": "yl-han-token",
-  "platform": "Windows",
+  "platform": "Windows (Codex/WorkBuddy/Trae); Windows/macOS/Linux (OpenCode/guides/probe)",
   "requires_python": ">=3.10",
   "vendored_dependencies": {
     "tomlkit": "0.15.2"
   },
   "files": {
-    "agents/openai.yaml": "1d0a4a2bf2d6477ad1115bb838699f2f833e65e74a4cf9af7166fa2c38544c2d",
-    "README.md": "434bd53c96ae7a82b890fcc606b37566db7265c2bd947f5a0d849053480c39b2",
+    "agents/openai.yaml": "ca7438f12c9562903abbc41f4c638dc84d695156745b2f7e909fdc6be78bf07f",
+    "README.md": "e1ccd27b268248649ba8527c64d4efe635d7d7f007b32f162599ce217e00bf81",
+    "references/agent-compatibility.md": "b82a5b74e58f745fd08f42a3cdda3fcc774c25362534116a7375e27b46f630fd",
     "references/diagnostics.md": "bc19cbc6d89f1ca963400e1519d65e539a90b1f3b9cca8cb51b8717c82f424ef",
-    "references/workflows.md": "8ed827ebfb6cb2ccf48822938ddbb5f1ee5e2b45a5c1b0616800228baf1e284f",
-    "scripts/hantoken.py": "e53f721270de4161e11da7883eb4f988e58db7bf7c8d047ecb35e5e954a8c89e",
+    "references/workflows.md": "916344d105c78e36ca0e48a2d47cb38367d75f69c80c3e303e2b1ec83c249382",
+    "scripts/connect.py": "b6ef636273149caf14372e3536088814656bd8a0e1897db1e340e81230fc59e3",
+    "scripts/connection_input.py": "efcbebf5ecdca628e6e1179841908dd15bed72f3bec901c6d10c73d1407441b4",
+    "scripts/hantoken.py": "d778be9cb78cc48247b0d88cc11a702b86103481242f7ce5bf77a9320e019cca",
     "scripts/runtime/agents/__init__.py": "4c1ed2c3a31d420aa37fd3ba18a2b7bdb66c87f7ce25861011f006a7e088f570",
     "scripts/runtime/agents/base.py": "3fa9e6226a991e42cc35f749442ad6e1734345a31a7962d18dc743916b9725c3",
     "scripts/runtime/agents/codex.py": "9a5f4744560e6fb76ff16eb1b6fc956bd7a9364c539385345d0acbc28087179f",
@@ -47,6 +50,8 @@
     "scripts/vendor/tomlkit/toml_document.py": "3824e45977773f9f04653e120fcfdd75cd58a6431aaad952e7fb2d1d306630e2",
     "scripts/vendor/tomlkit/toml_file.py": "d14e26e415728ee41dd2dd2bfa653e92879fa976e69ec3dd00de8a7bbd56e5d0",
     "scripts/vendor/tomlkit-LICENSE": "f2f9b460ba719da6626add264d3782f275a4ff7aab677beda08b330911e23adb",
-    "SKILL.md": "05164239a542fb94cc8f84f676d23c987a6aac0c5aeee2eb78e0e991548b4d8d"
-  }
+    "SKILL.md": "53b787f43edd2e0042309606991d53d38ad6460350d218a9435facd7b52ac321",
+    "tests/test_connections.py": "88fef4d51b19f3d5d82dc231a92c7b6e9bdb77e8441ecb8ad7468975c2b68b8b"
+  },
+  "version": "1.1.0"
 }

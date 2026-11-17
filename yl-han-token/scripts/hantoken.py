@@ -95,7 +95,10 @@ def run(args):
         request, _ = translate_request({"model": configs[1]["id"], "input": "test"})
         assert request["model"] == configs[1]["id"]
         assert Path(tomlkit.__file__).resolve().is_relative_to(ROOT / "vendor")
-        print(json.dumps({"ok": True, "standalone": True, "agents": ["Codex", "WorkBuddy", "Trae"],
+        from connection_input import normalize
+        batch = normalize(json.dumps({"apiKey": "self-check-placeholder", "models": ["Exact-A", "exact-a"]}), "OpenCode")
+        assert len(batch) == 2 and batch[0]["url"] == "https://api.hanrouter.ai/v1"
+        print(json.dumps({"ok": True, "standalone": True, "agents": ["Codex", "WorkBuddy", "Trae", "OpenCode"],
                           "python": sys.version.split()[0]}, ensure_ascii=False))
         return
     if os.name != "nt":
@@ -125,7 +128,13 @@ def run(args):
             raise RuntimeError("请通过 --input 或 --stdin 提供模型对象/数组；不要在命令行传密钥。")
         with timed_stage(args.timings, "input_parse"):
             raw = args.input.read_text(encoding="utf-8-sig") if args.input else sys.stdin.read()
-            configs = parse_model_configs(raw)
+            from connection_input import normalize
+            try:
+                normalized = normalize(raw, args.agent)
+            except json.JSONDecodeError:
+                # Keep legacy Markdown/JSON paste support when all fields are provided.
+                normalized = parse_model_configs(raw)
+            configs = parse_model_configs(json.dumps(normalized, ensure_ascii=False))
         if args.agent == "Codex":
             from core.codex_config import prepare_codex_config, select_codex_defaults
             configs = [prepare_codex_config(cfg, args.protocol) for cfg in configs]

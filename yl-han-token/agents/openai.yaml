@@ -1,4 +1,4 @@
 interface:
-  display_name: "yl-han-token"
-  short_description: "独立配置 Agent 自定义模型，自带运行代码，验证 Codex 同会话双向切换"
-  default_prompt: "使用 $yl-han-token 配置并检查模型接入，验证同一会话中常规与自定义模型的双向切换。"
+  display_name: "汉路特模型接入"
+  short_description: "对话提供 Key 和模型 ID，配置多种智能体并按实际调用结果验证接入"
+  default_prompt: "使用 $yl-han-token 将我提供的 Key 和精确模型 ID 接入当前智能体，采用汉路特默认地址，隐藏密钥并报告实际验证结果。"

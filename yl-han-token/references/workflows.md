@@ -34,6 +34,8 @@ Trae CN 的宿主选择与执行条件需分开说明：普通启动未开启 CD
 
 解析器只清理 URL 外层复制格式，不自动补路径。不要把 WorkBuddy 的完整请求路径原样用于 Codex。显式 `codex.wireApi` 优先于自动选择；其他服务商不能因为 HanRouter 成功就假设兼容。
 
+对话中只提供密钥和模型 ID、未提供 URL 时，技能按目标使用默认地址补全，不再向用户索取：WorkBuddy 用完整 Chat Completions 地址 `https://api.hanrouter.ai/v1/chat/completions`，Codex 与 Trae CN 用基础地址 `https://api.hanrouter.ai/v1`。模型 ID 取用户原值，`name` 省略时用 ID，密钥只经 `--stdin` 传入并显示脱敏信息；报告中说明本次默认地址以便用户纠正（用户提供真实地址后按 ID 重新导入即可，不产生重复）。用户本轮显式给出 URL 时以用户值为准。
+
 WorkBuddy、Trae 的 `name` 使用用户给定名称，省略时直接使用 `id`；不要额外添加 `自定义模型 / ` 或自行拼接 `name:id`。客户端自带模型保持不变，只处理自定义配置。
 
 WorkBuddy 导入时，已有自定义列表和批量输入均以去掉首尾空格、区分大小写的 `id` 为唯一键；同 ID 保留最后一条，重复导入按 ID 更新已有项，不因名称、地址、密钥不同而新增副本。不同 ID 即使使用同一地址或密钥也分别保留。清理既有重复时保留最后一条的完整字段，保留无关条目和顶层元数据，写入前备份。此规则仅适用于 WorkBuddy 自定义列表，不用于合并客户端自带目录或 Codex 的不同账号路由。

@@ -1,3 +1,5 @@
+> 新版支持对话 Key + 精确模型 ID、默认地址补全、批量模型和 OpenCode。总览见仓库根 README；跨客户端步骤见 [兼容说明](references/agent-compatibility.md)。以下为原有 Windows 客户端详细操作；原有 GUI 仍接受完整 JSON。
+
 # yl-han-token 使用说明与调用案例
 
 给 Codex、WorkBuddy、Trae CN 添加兼容 OpenAI 接口的自定义模型。支持单个模型和批量输入，保留其他已有模型及客户端自带模型。
@@ -7,6 +9,16 @@ Codex 默认将本次导入的第一项设为默认模型，项目界面的「�
 ## 在聊天中调用技能
 
 在支持技能的客户端中输入 `$yl-han-token`，然后附上需求和模型 JSON。以下密钥均为占位内容，使用时替换为你自己的密钥。
+
+### 只给密钥和模型 ID（URL 用默认）
+
+不想贴 JSON 时，可在对话里直接说明密钥和模型 ID（单个或多个都行），技能会自动补全配置并导入，无需再提供接口地址。默认地址：WorkBuddy 用完整地址 `https://api.hanrouter.ai/v1/chat/completions`，Codex 与 Trae CN 用基础地址 `https://api.hanrouter.ai/v1`。例如：
+
+```text
+$yl-han-token 配置 WorkBuddy。key 是 sk-你自己的密钥，模型 ID 是 qwen3.7-flash，保留其他已有模型。
+```
+
+多个模型可逐个列出 ID 和密钥。密钥只经标准输入传入，不在回复或报告中明文出现；报告会说明本次使用的默认地址，地址不同时给出真实地址再导入即可（按 ID 更新，不产生重复）。若本身提供了 URL，则以提供的为准。
 
 ### 案例一：配置当前客户端
 
